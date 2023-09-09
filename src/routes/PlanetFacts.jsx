@@ -49,16 +49,37 @@ const PlanetFacts = () => {
                     <Comet />
                     <Comet />
 
-                    <PlanetWrapper name="Mercury">
+                    <PlanetWrapper name={`"Mercury"`}>
                         <Planet id="p1" src={planet1} size="3vw" mSize="12vw" />
                     </PlanetWrapper>
-                    <Planet name="Venus" id="p2" src={planet2} size="4.98vw" mSize="14.96vw" />
-                    <Planet name="Earth" id="p3" src={planet3} size="6.27vw" mSize="18.27vw" />
-                    <Planet name="Mars" id="p4" src={planet4} size="2.25vw" mSize="8vw" />
-                    <Planet name="Jupiter" id="p5" src={planet5} size="15vw" mSize="20vw" />
-                    <Planet name="Saturn" id="p6" src={planet6} size="17vw" mSize="25vw" />
-                    <Planet name="Uranus" id="p6" src={planet7} size="8vw" mSize="16vw" />
-                    <Planet name="Neptune" id="p7" src={planet8} size="7vw" mSize="14vw" />
+
+                    <PlanetWrapper name={'"Venus"'}>
+                        <Planet id="p2" src={planet2} size="4.98vw" mSize="14.96vw" />
+                    </PlanetWrapper>
+
+                    <PlanetWrapper name={'"Earth"'}>
+                        <Planet id="p3" src={planet3} size="6.27vw" mSize="18.27vw" />
+                    </PlanetWrapper>
+
+                    <PlanetWrapper name={'"Mars"'}>
+                        <Planet id="p4" src={planet4} size="2.25vw" mSize="8vw" />
+                    </PlanetWrapper>
+
+                    <PlanetWrapper name={'"Jupiter"'}>
+                        <Planet id="p5" src={planet5} size="13vw" mSize="20vw" />
+                    </PlanetWrapper>
+
+                    <PlanetWrapper name={'"Saturn"'} saturn={true}>
+                        <Planet id="p6" src={planet6} size="15vw" mSize="25vw" />
+                    </PlanetWrapper>
+
+                    <PlanetWrapper name={'"Uranus"'}>
+                        <Planet id="p7" src={planet7} size="8vw" mSize="16vw" />
+                    </PlanetWrapper>
+
+                    <PlanetWrapper name={'"Neptune"'}>
+                        <Planet id="p8" src={planet8} size="7vw" mSize="14vw" />
+                    </PlanetWrapper>
                 </Planets>
             </PageContent>
         </Container>
@@ -73,7 +94,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: #070724;
+    background-color: #02001afa;
 `;
 
 const PageContent = styled.div`
@@ -117,10 +138,9 @@ const Subtitle = styled.div`
 
 const Planets = styled.div`
     background-image: url(${starryBG});
-    background-size: 80%;
+    background-size: 100%;
     background-repeat: repeat;
     background-position: center;
-    background-attachment: fixed;
     position: relative;
     width: 100%;
     display: flex;
@@ -128,6 +148,7 @@ const Planets = styled.div`
     justify-content: space-evenly;
     background-color: #070724;
     padding: 1rem;
+    padding-top: 2.5rem;
     overflow: hidden;
 
     @media (max-width: 550px) {
@@ -148,9 +169,19 @@ const PlanetWrapper = styled.div`
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        z-index: 5555;
         color: #fff;
-        font-size: 160px;
+        font-size: 3px;
+        z-index: -1;
+        font-family: Antonio;
+        transition: all .7s ease;
+        opacity: 0;
+    }
+
+    &:hover::before {
+        opacity: 1;
+        z-index: 2;
+        top: ${props => props.saturn ? "20px" : "-20px"};
+        font-size: 20px;
     }
 `;
 
@@ -163,8 +194,8 @@ const Planet = styled.img`
 
     @media (min-width: 1024px) {
         &:hover {
-            width: calc(${props => props.size} + 4vw);
-            height: calc(${props => props.size} + 4vw);
+            width: calc(${props => props.size} + 3vw);
+            height: calc(${props => props.size} + 3vw);
         }
     }
 
