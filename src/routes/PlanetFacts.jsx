@@ -146,7 +146,7 @@ const Planets = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #070724;
+    background-color: ${props => props.theme.spaceBackground};
     padding: 1rem;
     padding-top: 2.5rem;
     overflow: hidden;
