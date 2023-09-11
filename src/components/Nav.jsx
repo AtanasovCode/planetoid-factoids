@@ -179,6 +179,7 @@ const Links = styled.div`
 
     @media (min-width: 768px) {
         position: relative;
+        top: 0;
         z-index: 1;
         opacity: 1;
         display: flex;
