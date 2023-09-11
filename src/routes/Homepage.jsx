@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import planet1 from '../assets/planets/1.svg';
 import planet2 from '../assets/planets/2.svg';
@@ -11,7 +12,6 @@ import planet7 from '../assets/planets/7.svg';
 import planet8 from '../assets/planets/8.svg';
 
 import starryBG from '../assets/planets/starry-background.svg';
-import comet from '../assets/planets/comet.svg';
 
 import Nav from "../components/Nav";
 
@@ -49,35 +49,35 @@ const Homepage = () => {
                     <Comet />
                     <Comet /> 
 
-                    <PlanetWrapper name={`"Mercury"`}>
+                    <PlanetWrapper name={`"Mercury"`} to="/planets/mercury">
                         <Planet id="p1" src={planet1} size="3vw" mSize="12vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Venus"'}>
+                    <PlanetWrapper name={'"Venus"'} to="/planets/venus">
                         <Planet id="p2" src={planet2} size="4.98vw" mSize="14.96vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Earth"'}>
+                    <PlanetWrapper name={'"Earth"'} to="/planets/earth">
                         <Planet id="p3" src={planet3} size="6.27vw" mSize="18.27vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Mars"'}>
+                    <PlanetWrapper name={'"Mars"'} to="/planets/mars">
                         <Planet id="p4" src={planet4} size="2.25vw" mSize="8vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Jupiter"'}>
+                    <PlanetWrapper name={'"Jupiter"'} to="/planets/jupiter">
                         <Planet id="p5" src={planet5} size="13vw" mSize="20vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Saturn"'} saturn={true}>
+                    <PlanetWrapper name={'"Saturn"'} saturn={true} to="/planets/saturn">
                         <Planet id="p6" src={planet6} size="15vw" mSize="25vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Uranus"'}>
+                    <PlanetWrapper name={'"Uranus"'} to="/planets/uranus">
                         <Planet id="p7" src={planet7} size="8vw" mSize="16vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Neptune"'}>
+                    <PlanetWrapper name={'"Neptune"'} to="/planets/neptune">
                         <Planet id="p8" src={planet8} size="7vw" mSize="14vw" />
                     </PlanetWrapper>
                 </Planets>
@@ -159,7 +159,7 @@ const Planets = styled.div`
     }
 `;
 
-const PlanetWrapper = styled.div`
+const PlanetWrapper = styled(Link)`
 
     position: relative;
 
@@ -175,6 +175,7 @@ const PlanetWrapper = styled.div`
         font-family: Antonio;
         transition: all .7s ease;
         opacity: 0;
+        text-decoration: none;
     }
 
     &:hover::before {
