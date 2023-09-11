@@ -29,7 +29,7 @@ const Nav = () => {
                 <Comet />
 
 
-                <PlanetLink>
+                <PlanetLink to="/planets/mercury">
                     <Planet>
                         <PlanetColor color="#DEF4FC" />
                         Mercury
@@ -37,7 +37,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/venus">
                     <Planet>
                         <PlanetColor color="#F7CC7F" />
                         Venus
@@ -45,7 +45,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/earth">
                     <Planet>
                         <PlanetColor color="#545BFE" />
                         Earth
@@ -53,7 +53,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/mars">
                     <Planet>
                         <PlanetColor color="#FF6A45" />
                         Mars
@@ -61,7 +61,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/jupiter">
                     <Planet>
                         <PlanetColor color="#ECAD7A" />
                         Jupiter
@@ -69,7 +69,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/saturn">
                     <Planet>
                         <PlanetColor color="#FCCB6B" />
                         Saturn
@@ -77,7 +77,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/uranus">
                     <Planet>
                         <PlanetColor color="#65F0D5" />
                         Uranus
@@ -85,7 +85,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink>
+                <PlanetLink to="/planets/neptune">
                     <Planet>
                         <PlanetColor color="#497EFA" />
                         Neptune
@@ -198,7 +198,7 @@ const Links = styled.div`
     }
 `;
 
-const PlanetLink = styled.div`
+const PlanetLink = styled(Link)`
     width: 100%;
     display: flex;
     align-items: center;
@@ -219,7 +219,7 @@ const PlanetLink = styled.div`
     }
 `;
 
-const Planet = styled(Link)`
+const Planet = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
     font-family: League Spartan;

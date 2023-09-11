@@ -15,6 +15,8 @@ const theme = {
     spartan: 'League Spartan',
 }
 
+//importing routes
+import Homepage from './routes/Homepage';
 import PlanetFacts from './routes/PlanetFacts';
 
 const Router = () => {
@@ -22,8 +24,12 @@ const Router = () => {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <PlanetFacts />
+            element: <Homepage />
         },
+        {
+            path: "/planets/:planet",
+            element: <PlanetFacts />
+        }
     ])
 
     return (
