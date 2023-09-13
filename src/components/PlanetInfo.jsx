@@ -10,19 +10,27 @@ import p from '../assets/planets/3.svg';
 const PlanetInfo = () => {
     return (
         <Container>
-            <Tabs />
-            <Planet src={p} />
+
+            <Tabs mobileView={true} />
+
+            <Planet src={p} alt="picture of the currently selected planet" />
 
             <Info>
-                <Title>Earth</Title>
-                <Description>
-                    Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.
-                </Description>
-                <Source>
-                    Source :
-                    <Wikipedia>Wikipedia</Wikipedia>
-                    <Icon src={sourceIcon} alt="source icon" />
-                </Source>
+                <Tabs mobileView={false} />
+
+                <Heading>
+                    <Title>Earth</Title>
+
+                    <Description>
+                        Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.
+                    </Description>
+
+                    <Source>
+                        Source :
+                        <Wikipedia>Wikipedia</Wikipedia>
+                        <Icon src={sourceIcon} alt="source icon" />
+                    </Source>
+                </Heading>
             </Info>
         </Container>
     );
@@ -43,6 +51,13 @@ const Planet = styled.img`
 `;
 
 const Info = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Heading = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

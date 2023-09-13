@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 
-const Tabs = () => {
+const Tabs = ({
+    mobileView,
+}) => {
+
     return (
-        <Container>
+        <Container mobile={mobileView}>
             <Tab>Overview</Tab>
             <Tab>Structure</Tab>
             <Tab>Surface</Tab>
@@ -14,12 +17,28 @@ const Tabs = () => {
 export default Tabs;
 
 const Container = styled.div`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
-    padding: 20px 0;
+    
+    //displays the mobile version of the tabs
+    ${props => props.mobile && `
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        padding: 20px 0;
+        
+        @media (min-width: 768px) {
+            display: none;
+        }
+    `}
+
+    ${props => props.mobile === false && `
+        display: none;
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    `}
 `;
 
 const Tab = styled.div`

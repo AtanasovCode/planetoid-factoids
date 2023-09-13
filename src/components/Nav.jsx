@@ -157,8 +157,8 @@ const Logo = styled(Link)`
 `;
 
 const Close = styled.img`
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     top: 20px;
     right: 20px;
