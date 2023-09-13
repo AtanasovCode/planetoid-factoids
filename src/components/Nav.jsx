@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import menu from '../assets/navigation/menu.svg';
 import arrow from '../assets/navigation/arrow.svg';
+import close from '../assets/navigation/close.svg';
 import starryBackground from '../assets/planets/starry-background.svg';
 
 const Nav = () => {
@@ -19,6 +20,8 @@ const Nav = () => {
             <Menu src={menu} onClick={() => setShowNav(!showNav)} />
 
             <Links active={showNav}>
+
+                <Close src={close} alt="close icon" onClick={() => setShowNav(!showNav)} />
 
                 <Comet />
                 <Comet />
@@ -122,6 +125,7 @@ const Navigation = styled.nav`
 const Menu = styled.img`
     width: 24px;
     height: 17px;
+    cursor: pointer;
 
     @media (min-width: 768px) {
         display: none;
@@ -152,19 +156,32 @@ const Logo = styled(Link)`
     }
 `;
 
+const Close = styled.img`
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+`;
+
 const Links = styled.div`
     position: absolute;
     width: 100%;
-    height: 95vh;
-    top: -100vh;
+    height: 100vh;
+    top: 0;
+    right: -100%;
     z-index: -1;
+    padding-top: 3rem;
     opacity: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    z-index: 99;
     background-color: ${props => props.theme.background};
     color: ${props => props.theme.color};
     background-image: url(${starryBackground});
@@ -174,7 +191,8 @@ const Links = styled.div`
     transition: all .4s ease;
 
     ${props => props.active && `
-        top: calc(100% + 1px);
+        top: 0;
+        right: 0;
         z-index: 99;
         opacity: 1;
     `}
