@@ -171,12 +171,12 @@ const Close = styled.img`
 
 const Links = styled.div`
     position: absolute;
-    width: 100%;
+    width: 0;
     height: 100vh;
     top: 0;
     right: -100%;
     z-index: -1;
-    padding-top: 3rem;
+    padding-top: 6rem;
     opacity: 0;
     display: flex;
     flex-direction: column;
@@ -191,6 +191,7 @@ const Links = styled.div`
     transition: all .4s ease;
 
     ${props => props.active && `
+        width: 100%;
         top: 0;
         right: 0;
         z-index: 99;

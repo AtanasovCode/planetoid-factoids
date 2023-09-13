@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import sourceIcon from '../assets/icon-source.svg';
+
 //importing reusable components
 import Tabs from "./Tabs";
 
@@ -16,6 +18,11 @@ const PlanetInfo = () => {
                 <Description>
                     Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.
                 </Description>
+                <Source>
+                    Source :
+                    <Wikipedia>Wikipedia</Wikipedia>
+                    <Icon src={sourceIcon} alt="source icon" />
+                </Source>
             </Info>
         </Container>
     );
@@ -63,4 +70,35 @@ const Description = styled.div`
     font-weight: 400;
     line-height: 22px; /* 200% */
     max-width: 20.4375rem;
+`;
+
+const Source = styled.div`
+    color: ${props => props.theme.color};
+    font-family: League Spartan;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5625rem; /* 208.333% */
+    opacity: .5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+`;
+
+const Wikipedia = styled.span`
+    opacity: 0.5;
+    color: ${props => props.theme.color};
+    font-family: League Spartan;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5625rem;
+    text-decoration-line: underline;
+    margin: 0 4px;
+`;
+
+const Icon = styled.img`
+    width: 0.75rem;
+    height: 0.75rem;
 `;
