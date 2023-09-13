@@ -12,7 +12,7 @@ const Nav = () => {
 
     return (
         <Navigation>
-            <Logo>
+            <Logo to="/">
                 PlanetoidFactoids
             </Logo>
 
@@ -128,7 +128,9 @@ const Menu = styled.img`
     }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
+    text-decoration: none;
+    cursor: pointer;
     color: #FFF;
     font-family: Antonio;
     font-size: 22px;
@@ -186,7 +188,7 @@ const Links = styled.div`
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        background-color: ${props => props.background};
+        background-color: transparent;
         background-image: none;
         transition: none;
         height: auto;

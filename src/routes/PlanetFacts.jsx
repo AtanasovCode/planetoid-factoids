@@ -1,13 +1,34 @@
 import styled from "styled-components";
 
+import background from '../assets/planets/starry-background.svg';
+
+//importing reusable components
+import Nav from "../components/Nav";
+import PlanetStats from "../components/PlanetStats";
+import PlanetInfo from "../components/PlanetInfo";
+
 const PlanetFacts = () => {
     return (
         <Container>
-            YO
+            <Nav />
+
+            <PageContent>
+                <PlanetInfo />
+                <PlanetStats />
+            </PageContent>
         </Container>
     );
 }
 
 export default PlanetFacts;
 
-const Container = styled.div``;
+const Container = styled.div`
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: ${props => props.theme.background};
+`;
+
+const PageContent = styled.div``;
