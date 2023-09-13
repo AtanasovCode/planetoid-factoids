@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import menu from '../assets/navigation/menu.svg';
 import arrow from '../assets/navigation/arrow.svg';
@@ -32,7 +32,7 @@ const Nav = () => {
                 <Comet />
 
 
-                <PlanetLink to="/planets/mercury">
+                <PlanetLink to="/planets/mercury" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#DEF4FC" />
                         Mercury
@@ -40,7 +40,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/venus">
+                <PlanetLink to="/planets/venus" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#F7CC7F" />
                         Venus
@@ -48,7 +48,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/earth">
+                <PlanetLink to="/planets/earth" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#545BFE" />
                         Earth
@@ -56,7 +56,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/mars">
+                <PlanetLink to="/planets/mars" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#FF6A45" />
                         Mars
@@ -64,7 +64,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/jupiter">
+                <PlanetLink to="/planets/jupiter" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#ECAD7A" />
                         Jupiter
@@ -72,7 +72,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/saturn">
+                <PlanetLink to="/planets/saturn" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#FCCB6B" />
                         Saturn
@@ -80,7 +80,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/uranus">
+                <PlanetLink to="/planets/uranus" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#65F0D5" />
                         Uranus
@@ -88,7 +88,7 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/neptune">
+                <PlanetLink to="/planets/neptune" onClick={() => setShowNav(!showNav)}>
                     <Planet>
                         <PlanetColor color="#497EFA" />
                         Neptune
@@ -146,7 +146,7 @@ const Logo = styled(Link)`
     cursor: pointer;
 
     @media (min-width: 768px) {
-        margin-bottom: 40px;
+        margin-bottom: 2.44rem;
         font-size: 28px;
         letter-spacing: -1.05px;
     }
@@ -198,8 +198,11 @@ const Links = styled.div`
     `}
 
     @media (min-width: 768px) {
+
         position: relative;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 1;
         opacity: 1;
         display: flex;
@@ -211,6 +214,7 @@ const Links = styled.div`
         transition: none;
         height: auto;
         width: 100%;
+        padding-top: 0;
     }
 
     @media (min-width: 1024px) {
@@ -218,7 +222,7 @@ const Links = styled.div`
     }
 `;
 
-const PlanetLink = styled(Link)`
+const PlanetLink = styled(NavLink)`
     width: 100%;
     display: flex;
     align-items: center;
@@ -227,15 +231,32 @@ const PlanetLink = styled(Link)`
     padding: 20px 24px 20px 32px;
     cursor: pointer;
     position: relative;
+    text-decoration: none;
+
+    &.active {
+        background-color: rgba(255, 255, 255, .1);
+        border-bottom: 0;
+    }
 
     @media (min-width: 768px) {
         justify-content: center;
         border-bottom: 0;
         padding: 0;
+
+        &.active {
+            background-color: rgba(255, 255, 255, .2);
+            border-radius: 15px;
+        }
     }
 
     @media (min-width: 1024px) {
         margin-right: 33px;
+
+        &.active {
+            background-color: transparent;
+            border-bottom: 1px solid #fff;
+            border-radius: 0;
+        }
     }
 `;
 
