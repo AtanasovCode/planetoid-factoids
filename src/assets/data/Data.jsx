@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 //importing planet images
 import p1 from '../planets/1.svg';
 import p2 from '../planets/2.svg';
@@ -117,7 +115,7 @@ export const planets = [
         temp: "−28°c",
 
         overview: {
-            description: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet".",
+            description: '4Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet".',
             image: p4,
         },
 
@@ -218,7 +216,7 @@ export const planets = [
 
         overview: {
             description: "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.",
-            image: p8,
+            image: `p8`,
         },
 
         internal: {

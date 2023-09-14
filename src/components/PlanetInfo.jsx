@@ -7,11 +7,14 @@ import Tabs from "./Tabs";
 
 import p from '../assets/planets/3.svg';
 
-const PlanetInfo = () => {
+const PlanetInfo = ({
+    filter,
+    setFilter,
+}) => {
     return (
         <Container>
 
-            <Tabs mobileView={true} />
+            <Tabs mobileView={true} filter={filter} setFilter={setFilter} />
 
             <Planet src={p} alt="picture of the currently selected planet" />
 

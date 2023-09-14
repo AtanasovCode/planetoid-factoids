@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 //importing reusable components
@@ -5,13 +6,19 @@ import Nav from "../components/Nav";
 import PlanetStats from "../components/PlanetStats";
 import PlanetInfo from "../components/PlanetInfo";
 
+//importing data
+import { planets } from "../assets/data/Data";
+
 const PlanetFacts = () => {
+
+    const [filter, setFilter] = useState("overview");
+
     return (
         <Container>
             <Nav />
 
             <PageContent>
-                <PlanetInfo />
+                <PlanetInfo filter={filter} setFilter={setFilter} />
                 <PlanetStats />
             </PageContent>
         </Container>
