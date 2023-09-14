@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import background from '../assets/planets/starry-background.svg';
-
 //importing reusable components
 import Nav from "../components/Nav";
 import PlanetStats from "../components/PlanetStats";

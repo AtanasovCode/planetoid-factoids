@@ -7,11 +7,11 @@ import planet2 from '../assets/planets/2.svg';
 import planet3 from '../assets/planets/3.svg';
 import planet4 from '../assets/planets/4.svg';
 import planet5 from '../assets/planets/5.svg';
-import planet6 from '../assets/planet-saturn.svg';
+import planet6 from '../assets/planets/6.svg';
 import planet7 from '../assets/planets/7.svg';
 import planet8 from '../assets/planets/8.svg';
 
-import starryBG from '../assets/planets/starry-background.svg';
+import starryBG from '../assets/starry-background.svg';
 
 import Nav from "../components/Nav";
 
@@ -69,7 +69,7 @@ const Homepage = () => {
                         <Planet id="p5" src={planet5} size="13vw" mSize="20vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Saturn"'} saturn={true} to="/planets/saturn">
+                    <PlanetWrapper name={'"Saturn"'} $saturn={true} to="/planets/saturn">
                         <Planet id="p6" src={planet6} size="15vw" mSize="25vw" />
                     </PlanetWrapper>
 
@@ -181,7 +181,7 @@ const PlanetWrapper = styled(Link)`
     &:hover::before {
         opacity: 1;
         z-index: 2;
-        top: ${props => props.saturn ? "20px" : "-20px"};
+        top: ${props => props.$saturn ? "20px" : "-20px"};
         font-size: 20px;
     }
 `;

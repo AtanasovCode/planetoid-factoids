@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 import menu from '../assets/navigation/menu.svg';
 import arrow from '../assets/navigation/arrow.svg';
 import close from '../assets/navigation/close.svg';
-import starryBackground from '../assets/planets/starry-background.svg';
+import starryBackground from '../assets/navigation/starry-background.svg';
 
 const Nav = () => {
 

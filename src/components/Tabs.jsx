@@ -25,7 +25,8 @@ const Container = styled.div`
         align-items: center;
         justify-content: space-evenly;
         border-bottom: 1px solid rgba(255, 255, 255, .2);
-        padding: 20px 0;
+        padding: 1.25rem 0;
+
         
         @media (min-width: 768px) {
             display: none;
@@ -54,4 +55,5 @@ const Tab = styled.div`
     line-height: normal;
     letter-spacing: 1.929px;
     text-transform: uppercase;
+    cursor: pointer;
 `;
