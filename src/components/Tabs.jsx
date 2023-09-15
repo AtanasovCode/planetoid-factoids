@@ -49,7 +49,7 @@ const Tab = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
     font-family: League Spartan;
-    font-size: 9px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

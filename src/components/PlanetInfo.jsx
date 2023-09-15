@@ -92,11 +92,12 @@ const Description = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
     font-family: Spartan;
-    font-size: 11px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 22px; /* 200% */
     max-width: 20.4375rem;
+    opacity: .9;
 `;
 
 const Source = styled.a`
