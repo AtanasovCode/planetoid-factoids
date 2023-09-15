@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import sourceIcon from '../assets/icon-source.svg';
@@ -8,27 +9,35 @@ import Tabs from "./Tabs";
 import p from '../assets/planets/3.svg';
 
 const PlanetInfo = ({
+    selectedPlanet,
     filter,
     setFilter,
+    name,
+    wikipedia,
+    image,
+    description,
 }) => {
     return (
         <Container>
 
             <Tabs mobileView={true} filter={filter} setFilter={setFilter} />
 
-            <Planet src={p} alt="picture of the currently selected planet" />
+            <Planet
+                src={image}
+                alt={`A picture pf the planet ${selectedPlanet}`}
+            />
 
             <Info>
                 <Tabs mobileView={false} />
 
                 <Heading>
-                    <Title>Earth</Title>
+                    <Title> {name} </Title>
 
                     <Description>
-                        Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.
+                        {description}
                     </Description>
 
-                    <Source>
+                    <Source href={wikipedia}  target="_blank">
                         Source :
                         <Wikipedia>Wikipedia</Wikipedia>
                         <Icon src={sourceIcon} alt="source icon" />
@@ -90,7 +99,8 @@ const Description = styled.div`
     max-width: 20.4375rem;
 `;
 
-const Source = styled.div`
+const Source = styled.a`
+    text-decoration: none;
     color: ${props => props.theme.color};
     font-family: League Spartan;
     font-size: 12px;
@@ -102,9 +112,10 @@ const Source = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+    cursor: pointer;
 `;
 
-const Wikipedia = styled.span`
+const Wikipedia = styled.div`
     opacity: 0.5;
     color: ${props => props.theme.color};
     font-family: League Spartan;

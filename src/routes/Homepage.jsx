@@ -16,7 +16,10 @@ import starryBG from '../assets/starry-background.svg';
 import Nav from "../components/Nav";
 
 
-const Homepage = () => {
+const Homepage = ({
+    selectedPlanet,
+    setSelectedPlanet,
+}) => {
 
     //values used to represent X, Y coordinates for falling star
     const [cometX, setCometX] = useState();
@@ -29,7 +32,11 @@ const Homepage = () => {
 
     return (
         <Container>
-            <Nav />
+            <Nav
+                selectedPlanet={selectedPlanet}
+                setSelectedPlanet={setSelectedPlanet}
+            />
+
             <PageContent>
                 <Heading>
                     <Title>
@@ -47,37 +54,70 @@ const Homepage = () => {
                     <Comet />
                     <Comet />
                     <Comet />
-                    <Comet /> 
+                    <Comet />
 
-                    <PlanetWrapper name={`"Mercury"`} to="/planets/mercury">
+                    <PlanetWrapper
+                        name={`"Mercury"`}
+                        to="/planets/mercury"
+                        onClick={() => setSelectedPlanet("mercury")}
+                    >
                         <Planet id="p1" src={planet1} size="3vw" mSize="12vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Venus"'} to="/planets/venus">
+                    <PlanetWrapper
+                        name={'"Venus"'}
+                        to="/planets/venus"
+                        onClick={() => setSelectedPlanet("venus")}
+                    >
                         <Planet id="p2" src={planet2} size="4.98vw" mSize="14.96vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Earth"'} to="/planets/earth">
+                    <PlanetWrapper
+                        name={'"Earth"'}
+                        to="/planets/earth"
+                        onClick={() => setSelectedPlanet("earth")}
+                    >
                         <Planet id="p3" src={planet3} size="6.27vw" mSize="18.27vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Mars"'} to="/planets/mars">
+                    <PlanetWrapper
+                        name={'"Mars"'}
+                        to="/planets/mars"
+                        onClick={() => setSelectedPlanet("mars")}
+                    >
                         <Planet id="p4" src={planet4} size="2.25vw" mSize="8vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Jupiter"'} to="/planets/jupiter">
+                    <PlanetWrapper
+                        name={'"Jupiter"'}
+                        to="/planets/jupiter"
+                        onClick={() => setSelectedPlanet("jupiter")}
+                    >
                         <Planet id="p5" src={planet5} size="13vw" mSize="20vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Saturn"'} $saturn={true} to="/planets/saturn">
+                    <PlanetWrapper
+                        name={'"Saturn"'}
+                        $saturn={true}
+                        to="/planets/saturn"
+                        onClick={() => setSelectedPlanet("saturn")}
+                    >
                         <Planet id="p6" src={planet6} size="15vw" mSize="25vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Uranus"'} to="/planets/uranus">
+                    <PlanetWrapper
+                        name={'"Uranus"'}
+                        to="/planets/uranus"
+                        onClick={() => setSelectedPlanet("uranus")}
+                    >
                         <Planet id="p7" src={planet7} size="8vw" mSize="16vw" />
                     </PlanetWrapper>
 
-                    <PlanetWrapper name={'"Neptune"'} to="/planets/neptune">
+                    <PlanetWrapper
+                        name={'"Neptune"'}
+                        to="/planets/neptune"
+                        onClick={() => setSelectedPlanet("neptune")}
+                    >
                         <Planet id="p8" src={planet8} size="7vw" mSize="14vw" />
                     </PlanetWrapper>
                 </Planets>

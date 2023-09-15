@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-const PlanetStats = () => {
+const PlanetStats = ({
+    rotation,
+    revolution,
+    radius,
+    temp,
+}) => {
     return (
         <Container></Container>
     );

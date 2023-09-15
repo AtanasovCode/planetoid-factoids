@@ -9,17 +9,45 @@ import PlanetInfo from "../components/PlanetInfo";
 //importing data
 import { planets } from "../assets/data/Data";
 
-const PlanetFacts = () => {
+const PlanetFacts = ({
+    selectedPlanet,
+    setSelectedPlanet,
+    filter,
+    setFilter,
+    name,
+    wikipedia,
+    rotation,
+    revolution,
+    radius,
+    temp,
+    image,
+    description,
 
-    const [filter, setFilter] = useState("overview");
+}) => {
 
     return (
         <Container>
-            <Nav />
+            <Nav
+                selectedPlanet={selectedPlanet}
+                setSelectedPlanet={setSelectedPlanet}
+            />
 
             <PageContent>
-                <PlanetInfo filter={filter} setFilter={setFilter} />
-                <PlanetStats />
+                <PlanetInfo
+                    filter={filter}
+                    setFilter={setFilter}
+                    name={name}
+                    image={image}
+                    description={description}
+                    wikipedia={wikipedia}
+                    selectedPlanet={selectedPlanet}
+                />
+                <PlanetStats
+                    rotation={rotation}
+                    revolution={revolution}
+                    temp={temp}
+                    radius={radius}
+                />
             </PageContent>
         </Container>
     );

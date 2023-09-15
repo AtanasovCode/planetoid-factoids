@@ -7,7 +7,10 @@ import arrow from '../assets/navigation/arrow.svg';
 import close from '../assets/navigation/close.svg';
 import starryBackground from '../assets/navigation/starry-background.svg';
 
-const Nav = () => {
+const Nav = ({
+    selectedPlanet,
+    setSelectedPlanet,
+}) => {
 
     const [showNav, setShowNav] = useState(false);
 
@@ -32,7 +35,13 @@ const Nav = () => {
                 <Comet />
 
 
-                <PlanetLink to="/planets/mercury" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/mercury"
+                    onClick={() => {
+                        setShowNav(!showNav)
+                        setSelectedPlanet("mercury");
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#DEF4FC" />
                         Mercury
@@ -40,7 +49,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/venus" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/venus"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("venus");
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#F7CC7F" />
                         Venus
@@ -48,7 +63,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/earth" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/earth"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("earth");
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#545BFE" />
                         Earth
@@ -56,7 +77,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/mars" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/mars"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("mars");
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#FF6A45" />
                         Mars
@@ -64,7 +91,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/jupiter" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/jupiter"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("jupiter");
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#ECAD7A" />
                         Jupiter
@@ -72,7 +105,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/saturn" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/saturn"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("saturn");
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#FCCB6B" />
                         Saturn
@@ -80,7 +119,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/uranus" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/uranus"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("uranus")
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#65F0D5" />
                         Uranus
@@ -88,7 +133,13 @@ const Nav = () => {
                     <ArrowIcon src={arrow} />
                 </PlanetLink>
 
-                <PlanetLink to="/planets/neptune" onClick={() => setShowNav(!showNav)}>
+                <PlanetLink
+                    to="/planets/neptune"
+                    onClick={() => {
+                        setShowNav(!showNav);
+                        setSelectedPlanet("neptune")
+                    }}
+                >
                     <Planet>
                         <PlanetColor color="#497EFA" />
                         Neptune
