@@ -23,6 +23,7 @@ const PlanetInfo = ({
             <Tabs mobileView={true} filter={filter} setFilter={setFilter} />
 
             <Planet
+                name={name}
                 src={image}
                 alt={`A picture pf the planet ${selectedPlanet}`}
             />
@@ -60,6 +61,18 @@ const Container = styled.div`
 const Planet = styled.img`
     width: 47%;
     margin: 4.19rem 0;
+
+    //Applying different sizes to different planets
+
+    ${props => props.name === "mercury" && `width: 40%`};
+    ${props => props.name === "venus" && `width: 45%`};
+    ${props => props.name === "earth" && `width: 48%`};
+    ${props => props.name === "mars" && `width: 36%`};
+    ${props => props.name === "jupiter" && `width: 63%`};
+    ${props => props.name === "saturn" && `width: 57%`};
+    ${props => props.name === "uranus" && `width: 52%`};
+    ${props => props.name === "neptune" && `width: 50%`};
+
 `;
 
 const Info = styled.div`

@@ -216,7 +216,7 @@ export const planets = [
 
         overview: {
             description: "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.",
-            image: `p8`,
+            image: p8,
         },
 
         internal: {
