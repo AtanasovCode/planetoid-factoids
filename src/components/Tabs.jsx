@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 
@@ -5,13 +6,54 @@ const Tabs = ({
     mobileView,
     filter,
     setFilter,
+    name,
 }) => {
+
+    const [colors, setColors] = useState([
+        {
+            name: "mercury",
+            color: "#419EBB"
+        },
+        {
+            name: "venus",
+            color: "#EDA249"
+        },
+        {
+            name: "earth",
+            color: "#6D2ED5"
+        },
+        {
+            name: "mars",
+            color: "#D14C32"
+        },
+        {
+            name: "jupiter",
+            color: "#D83A34"
+        },
+        {
+            name: "saturn",
+            color: "#CD5120"
+        },
+        {
+            name: "uranus",
+            color: "#1EC1A2"
+        },
+        {
+            name: "neptune",
+            color: "#2D68F0"
+        }
+    ])
+    
+
+    const colorObject = colors.find((item) => item.name === name);
+    const color = colorObject.color;
+
 
     return (
         <Container mobile={mobileView}>
-            <Tab active={filter === "overview" && true} onClick={() => setFilter("overview")}>Overview</Tab>
-            <Tab active={filter === "internal" && true} onClick={() => setFilter("internal")}>Structure</Tab>
-            <Tab active={filter === "surface" && true} onClick={() => setFilter("surface")}>Surface</Tab>
+            <Tab color={color} active={filter === "overview" && true} onClick={() => setFilter("overview")}>Overview</Tab>
+            <Tab color={color} active={filter === "internal" && true} onClick={() => setFilter("internal")}>Structure</Tab>
+            <Tab color={color} active={filter === "surface" && true} onClick={() => setFilter("surface")}>Surface</Tab>
         </Container>
     );
 }
@@ -36,7 +78,11 @@ const Container = styled.div`
         display: none;
 
         @media (min-width: 768px) {
+            flex: 100%;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     `}
 `;
@@ -75,5 +121,26 @@ const Tab = styled.div`
         ${props => props.active && `
             background-color: #2D68F0;
         `}
+    };
+
+    @media (min-width: 768px) {
+        width: 100%;
+        text-align: left;
+        border: 1px solid rgba(255, 255, 255, .2);
+        font-size: 9px;
+        line-height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: .5rem 2rem;
+        margin-bottom: 1rem;
+        
+        ${props => props.active && `
+            background-color: ${props.color};
+        `}
+        
+        &::before {
+            display: none;
+        }
     }
 `;

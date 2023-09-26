@@ -20,7 +20,7 @@ const PlanetInfo = ({
     return (
         <Container>
 
-            <Tabs mobileView={true} filter={filter} setFilter={setFilter} />
+            <Tabs mobileView={true} filter={filter} setFilter={setFilter} name={name} />
 
             <Planet
                 name={name}
@@ -29,7 +29,7 @@ const PlanetInfo = ({
             />
 
             <Info>
-                <Tabs mobileView={false} />
+                <Tabs mobileView={false} filter={filter} setFilter={setFilter} name={name} />
 
                 <Heading>
                     <Title> {name} </Title>
@@ -61,18 +61,40 @@ const Container = styled.div`
 const Planet = styled.img`
     width: 47%;
     margin: 4.19rem 0;
+    position: relative;
 
-    //Applying different sizes to different planets
+    /* Applying different sizes to different planets */
 
-    ${props => props.name === "mercury" && `width: 40%`};
+    @media (min-width: 768px) {
+        ${props => props.name === "mercury" && `width: 25%`}
+        ${props => props.name === "venus" && `width: 30%`}
+        ${props => props.name === "earth" && `width: 34%`}
+        ${props => props.name === "mars" && `width: 20%`}
+        ${props => props.name === "jupiter" && `width: 40%`}
+        ${props => props.name === "saturn" && `width: 42%`}
+        ${props => props.name === "uranus" && `width: 36%`}
+        ${props => props.name === "neptune" && `width: 38%`}
+    }
+
+    @media (min-width: 1024px) {
+        ${props => props.name === "mercury" && `width: 30%`}
+        ${props => props.name === "venus" && `width: 35%`}
+        ${props => props.name === "earth" && `width: 38%`}
+        ${props => props.name === "mars" && `width: 27%`}
+        ${props => props.name === "jupiter" && `width: 42%`}
+        ${props => props.name === "saturn" && `width: 44%`}
+        ${props => props.name === "uranus" && `width: 40%`}
+        ${props => props.name === "neptune" && `width: 43%`}
+    }
+
+    ${props => props.name === "mercury" && `width: 40%`}
     ${props => props.name === "venus" && `width: 45%`};
     ${props => props.name === "earth" && `width: 48%`};
-    ${props => props.name === "mars" && `width: 36%`};
-    ${props => props.name === "jupiter" && `width: 63%`};
-    ${props => props.name === "saturn" && `width: 57%`};
-    ${props => props.name === "uranus" && `width: 52%`};
-    ${props => props.name === "neptune" && `width: 50%`};
-
+    ${props => props.name === "mars" && `width: 37%`};
+    ${props => props.name === "jupiter" && `width: 52%`}
+    ${props => props.name === "saturn" && `width: 54%`}
+    ${props => props.name === "uranus" && `width: 50%`}
+    ${props => props.name === "neptune" && `width: 53%`}
 `;
 
 const Info = styled.div`
@@ -80,6 +102,15 @@ const Info = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 768px) {
+        width: 100vw;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.44rem;
+    }
 `;
 
 const Heading = styled.div`
@@ -87,6 +118,12 @@ const Heading = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 768px) {
+        align-items: flex-start;
+        flex: 100%;
+        margin-right: 4.31rem;
+    }
 `;
 
 const Title = styled.div`
@@ -99,6 +136,11 @@ const Title = styled.div`
     line-height: normal;
     text-transform: uppercase;
     margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+        text-align: left;
+        font-size: 43px;
+    }
 `;
 
 const Description = styled.div`
@@ -111,6 +153,12 @@ const Description = styled.div`
     line-height: 22px; /* 200% */
     max-width: 20.4375rem;
     opacity: .9;
+
+    @media (min-width: 768px) {
+        text-align: left;
+        font-size: 14px;
+        max-width: 32rem;
+    }
 `;
 
 const Source = styled.a`
@@ -127,21 +175,29 @@ const Source = styled.a`
     justify-content: center;
     margin-top: 2rem;
     cursor: pointer;
+    opacity: 0.5;
+
+    @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 25px; /* 208.333% */
+    }
 `;
 
 const Wikipedia = styled.div`
-    opacity: 0.5;
-    color: ${props => props.theme.color};
-    font-family: League Spartan;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.5625rem;
     text-decoration-line: underline;
-    margin: 0 4px;
+    margin: 0 0.25rem;
+
+    @media (min-widht: 768px) {
+        margin: .5rem;
+    }
 `;
 
 const Icon = styled.img`
     width: 0.75rem;
     height: 0.75rem;
+
+    @media (min-width: 768px) {
+        width: 1rem;
+        height: 1rem;
+    }
 `;

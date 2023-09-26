@@ -40,6 +40,12 @@ const Container = styled.div`
     justify-content: center;
     margin-top: 1.75rem;
     margin-bottom: 60px;
+
+    @media (min-width: 768px) {
+        width: 100vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 `;
 
 const StatContainer = styled.div`
@@ -50,6 +56,15 @@ const StatContainer = styled.div`
     border: 1px solid rgba(255, 255, 255, .2);
     padding: 1rem 1.5rem;
     margin-bottom: .5rem;
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 1rem;
+        margin-bottom: 0;
+        width: auto;
+    }
 `;
 
 const Name = styled.div`
