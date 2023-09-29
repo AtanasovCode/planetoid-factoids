@@ -45,7 +45,7 @@ const Container = styled.div`
         width: 100vw;
         flex-direction: row;
         justify-content: space-evenly;
-    }
+    } 
 `;
 
 const StatContainer = styled.div`
@@ -74,19 +74,38 @@ const Name = styled.div`
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
-    line-height: 1rem; /* 200% */
-    letter-spacing: 0.04544rem;
+    line-height: 16px; /* 200% */
+    letter-spacing: 0.727px;
     text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 12px;
+        opacity: .7;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 12px;
+    }
 `;
 
 const Stat = styled.div`
     color: ${props => props.theme.color};
     text-align: right;
     font-family: Antonio;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -0.04688rem;
+    letter-spacing: -0.75px;
     text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+        letter-spacing: -0.9px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 26px;
+        letter-spacing: -1.5px;
+    }
 `;

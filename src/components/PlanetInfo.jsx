@@ -22,11 +22,13 @@ const PlanetInfo = ({
 
             <Tabs mobileView={true} filter={filter} setFilter={setFilter} name={name} />
 
-            <Planet
-                name={name}
-                src={image}
-                alt={`A picture pf the planet ${selectedPlanet}`}
-            />
+            <PlanetContainer>
+                <Planet
+                    name={name}
+                    src={image}
+                    alt={`A picture pf the planet ${selectedPlanet}`}
+                />
+            </PlanetContainer>
 
             <Info>
                 <Tabs mobileView={false} filter={filter} setFilter={setFilter} name={name} />
@@ -38,7 +40,7 @@ const PlanetInfo = ({
                         {description}
                     </Description>
 
-                    <Source href={wikipedia}  target="_blank">
+                    <Source href={wikipedia} target="_blank">
                         Source :
                         <Wikipedia>Wikipedia</Wikipedia>
                         <Icon src={sourceIcon} alt="source icon" />
@@ -56,6 +58,20 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
+`;
+
+const PlanetContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+        flex: 100%;
+    }
 `;
 
 const Planet = styled.img`
@@ -77,14 +93,15 @@ const Planet = styled.img`
     }
 
     @media (min-width: 1024px) {
-        ${props => props.name === "mercury" && `width: 30%`}
-        ${props => props.name === "venus" && `width: 35%`}
-        ${props => props.name === "earth" && `width: 38%`}
-        ${props => props.name === "mars" && `width: 27%`}
-        ${props => props.name === "jupiter" && `width: 42%`}
-        ${props => props.name === "saturn" && `width: 44%`}
-        ${props => props.name === "uranus" && `width: 40%`}
-        ${props => props.name === "neptune" && `width: 43%`}
+        margin: 0;
+        ${props => props.name === "mercury" && `width: 35%`}
+        ${props => props.name === "venus" && `width: 40%`}
+        ${props => props.name === "earth" && `width: 43%`}
+        ${props => props.name === "mars" && `width: 32%`}
+        ${props => props.name === "jupiter" && `width: 47%`}
+        ${props => props.name === "saturn" && `width: 49%`}
+        ${props => props.name === "uranus" && `width: 45%`}
+        ${props => props.name === "neptune" && `width: 48%`}
     }
 
     ${props => props.name === "mercury" && `width: 40%`}
@@ -111,6 +128,14 @@ const Info = styled.div`
         justify-content: space-between;
         padding: 0 2.44rem;
     }
+
+    @media (min-width: 1024px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: center;
+        flex: 70%;
+        padding: 4rem 5rem;
+    }
 `;
 
 const Heading = styled.div`
@@ -123,6 +148,10 @@ const Heading = styled.div`
         align-items: flex-start;
         flex: 100%;
         margin-right: 4.31rem;
+    }
+
+    @media (min-width: 1024px) {
+        margin-right: 0;
     }
 `;
 
@@ -197,7 +226,7 @@ const Icon = styled.img`
     height: 0.75rem;
 
     @media (min-width: 768px) {
-        width: 1rem;
-        height: 1rem;
+        width: 0.85rem;
+        height: 0.85rem;
     }
 `;

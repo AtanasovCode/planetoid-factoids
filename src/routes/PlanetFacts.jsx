@@ -62,6 +62,15 @@ const Container = styled.div`
     align-items: center;
     justify-content: flex-start;
     background-color: ${props => props.theme.background};
+    overflow-x: hidden;
 `;
 
-const PageContent = styled.div``;
+const PageContent = styled.div`
+
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+`;

@@ -84,6 +84,11 @@ const Container = styled.div`
             align-items: center;
             justify-content: center;
         }
+
+        @media (min-width: 1024px) {
+            width: 100%;
+            flex: 0;
+        }
     `}
 `;
 
