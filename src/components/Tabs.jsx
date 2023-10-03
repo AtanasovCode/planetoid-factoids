@@ -143,10 +143,14 @@ const Tab = styled.div`
         
         ${props => props.active && `
             background-color: ${props.color};
-        `}
+        `};
+        
+        &:hover {
+            background-color: ${(props) => `${props.color}43`};
+        }
         
         &::before {
             display: none;
-        }
+        };
     }
 `;

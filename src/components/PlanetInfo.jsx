@@ -60,8 +60,11 @@ const Container = styled.div`
     justify-content: center;
 
     @media (min-width: 1024px) {
+        width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        align-items: stretch;
+        margin: 2rem 0;
     }
 `;
 
@@ -70,8 +73,12 @@ const PlanetContainer = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media (min-width: 768px) {
+        margin: 3.5rem 0;
+    }
+
     @media (min-width: 1024px) {
-        border: 1px solid #fff;
+        margin: 0;
         flex: 100%;
     }
 `;
@@ -140,7 +147,6 @@ const Info = styled.div`
         justify-content: center;
         flex: 70%;
         padding: 4rem 5rem;
-        border: 1px solid #fff;
     }
 `;
 
@@ -215,6 +221,10 @@ const Source = styled.a`
     @media (min-width: 768px) {
         font-size: 14px;
         line-height: 25px; /* 208.333% */
+    }
+
+    @media (min-width: 1024px) {
+        margin: 1rem 0;
     }
 `;
 
