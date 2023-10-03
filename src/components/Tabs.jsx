@@ -78,6 +78,7 @@ const Container = styled.div`
         display: none;
 
         @media (min-width: 768px) {
+            border: 1px solid #000;
             flex: 100%;
             display: flex;
             flex-direction: column;

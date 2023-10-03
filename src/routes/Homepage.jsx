@@ -163,6 +163,10 @@ const Title = styled.div`
     line-height: normal;
     letter-spacing: -1.05px;
     margin-bottom: 1rem;
+
+    @media (max-width: 550px) {
+        font-size: 26px;
+    }
 `;
 
 const Subtitle = styled.div`
@@ -174,6 +178,10 @@ const Subtitle = styled.div`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1.05px;
+
+    @media (max-width: 550px) {
+        font-size: 12px;
+    }
 `;
 
 const Planets = styled.div`

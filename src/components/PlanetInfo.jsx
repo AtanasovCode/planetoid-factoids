@@ -61,6 +61,7 @@ const Container = styled.div`
 
     @media (min-width: 1024px) {
         flex-direction: row;
+        justify-content: space-between;
     }
 `;
 
@@ -70,6 +71,7 @@ const PlanetContainer = styled.div`
     justify-content: center;
 
     @media (min-width: 1024px) {
+        border: 1px solid #fff;
         flex: 100%;
     }
 `;
@@ -82,26 +84,29 @@ const Planet = styled.img`
     /* Applying different sizes to different planets */
 
     @media (min-width: 768px) {
-        ${props => props.name === "mercury" && `width: 25%`}
-        ${props => props.name === "venus" && `width: 30%`}
-        ${props => props.name === "earth" && `width: 34%`}
-        ${props => props.name === "mars" && `width: 20%`}
-        ${props => props.name === "jupiter" && `width: 40%`}
-        ${props => props.name === "saturn" && `width: 42%`}
-        ${props => props.name === "uranus" && `width: 36%`}
-        ${props => props.name === "neptune" && `width: 38%`}
+        margin: 0;
+        ${props => props.name === "mercury" && `width: 25vw`}
+        ${props => props.name === "venus" && `width: 27vw`}     
+        ${props => props.name === "earth" && `width: 28vw`}     
+        ${props => props.name === "mars" && `width: 26vw`}      
+        ${props => props.name === "jupiter" && `width: 32.5vw`}
+        ${props => props.name === "saturn" && `width: 35.75vw`}  
+        ${props => props.name === "uranus" && `width: 29.5vw`}   
+        ${props => props.name === "neptune" && `width: 30.25vw`} 
+
     }
 
     @media (min-width: 1024px) {
         margin: 0;
-        ${props => props.name === "mercury" && `width: 35%`}
-        ${props => props.name === "venus" && `width: 40%`}
-        ${props => props.name === "earth" && `width: 43%`}
-        ${props => props.name === "mars" && `width: 32%`}
-        ${props => props.name === "jupiter" && `width: 47%`}
-        ${props => props.name === "saturn" && `width: 49%`}
-        ${props => props.name === "uranus" && `width: 45%`}
-        ${props => props.name === "neptune" && `width: 48%`}
+        ${props => props.name === "mercury" && `width: 20vw`}
+        ${props => props.name === "venus" && `width: 25vw`}
+        ${props => props.name === "earth" && `width: 28vw`}
+        ${props => props.name === "mars" && `width: 23vw`}
+        ${props => props.name === "jupiter" && `width: 35vw`} // Adjusted to be the biggest
+        ${props => props.name === "saturn" && `width: 30vw`}
+        ${props => props.name === "uranus" && `width: 27vw`}
+        ${props => props.name === "neptune" && `width: 26vw`}
+
     }
 
     ${props => props.name === "mercury" && `width: 40%`}
@@ -121,20 +126,21 @@ const Info = styled.div`
     justify-content: center;
 
     @media (min-width: 768px) {
-        width: 100vw;
+        flex: 100%;
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
         justify-content: space-between;
-        padding: 0 2.44rem;
     }
 
     @media (min-width: 1024px) {
+        flex: 50%;
         flex-direction: column-reverse;
         align-items: flex-start;
         justify-content: center;
         flex: 70%;
         padding: 4rem 5rem;
+        border: 1px solid #fff;
     }
 `;
 
