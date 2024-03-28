@@ -9,6 +9,8 @@ import PlanetInfo from "../components/PlanetInfo";
 //importing data
 import { planets } from "../assets/data/Data";
 
+import starryBG from '../assets/starry-background.svg';
+
 const PlanetFacts = ({
     selectedPlanet,
     setSelectedPlanet,
@@ -61,8 +63,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: ${props => props.theme.background};
     overflow-x: hidden;
+    background-color: ${props => props.theme.background};
 `;
 
 const PageContent = styled.div`

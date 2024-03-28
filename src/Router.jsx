@@ -10,7 +10,7 @@ import { GlobalStyle } from "./GlobalStyle";
 const theme = {
     //Colors
     color: "#fff",
-    background: "#070724",
+    background: "#000000",
 
     //Typography
     antonio: 'Antonio',
