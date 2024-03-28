@@ -214,9 +214,9 @@ const PlanetWrapper = styled(Link)`
     &::before {
         content: ${props => props.name};
         position: absolute;
-        top: 50%;
+        top: 20%;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%);
         color: #fff;
         font-size: 3px;
         z-index: -1;
@@ -229,7 +229,7 @@ const PlanetWrapper = styled(Link)`
     &:hover::before {
         opacity: 1;
         z-index: 2;
-        top: ${props => props.$saturn ? "20px" : "-20px"};
+        top: ${props => props.$saturn ? "-15px" : "-35px"};
         font-size: 20px;
     }
 `;
