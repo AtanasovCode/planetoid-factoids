@@ -40,7 +40,7 @@ const Homepage = ({
             <PageContent>
                 <Heading>
                     <Title>
-                        Explore our cosmic naighbors
+                        Explore our cosmic neighbors
                     </Title>
 
                     <Subtitle>
