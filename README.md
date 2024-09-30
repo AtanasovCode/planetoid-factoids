@@ -1,8 +1,25 @@
-# React + Vite
+# PlanetoidFactoids
+![](./src/assets/screenshots/planets.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Learn about our planets
 
-Currently, two official plugins are available:
+Learn cool and interesting facts about the planets in our solar system. Take a trip to our cosmic neighbors, 
+from our planet Earth to the giants such as Jupiter. PlanetoidFactoids shows you all kinds of interesting facts about our planets.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Chose what planet you want to visit.
+![](./src/assets/screenshots/earth.png)
+
+Chose the planet you want to visit by clicking on it on our homepage.
+
+### See all the info you need about it.
+![](./src/assets/screenshots/info.png)
+
+### Learn interesting facts about the planet, like it's radius and average temperature
+![](./src/assets/screenshots/facts.png)
+
+![](./src/assets/screenshots/stucture-overview.png)
+
+## Learn what planets are made of. 
+
+
+
