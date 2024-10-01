@@ -29,7 +29,12 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
           onClick={() => setShowNav(!showNav)}
         />
 
-        <NavLogo to="/">PlanetoidFactoids</NavLogo>
+        <NavLogo to="/">
+          <LogoIcon 
+            src={logo}
+            alt="logo icon"
+          />
+        </NavLogo>
 
         <Comet />
         <Comet />
