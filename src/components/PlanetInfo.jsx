@@ -59,11 +59,15 @@ const Container = styled.div`
     justify-content: center;
 
     @media (min-width: 1024px) {
-        width: 100%;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
         margin: 2rem 0;
+        width: 95%;
+    }
+
+    @media (min-width: 1330px) {
+        width: 85%;
     }
 `;
 
@@ -115,14 +119,17 @@ const Info = styled.div`
         flex: 100%;
         flex-direction: row-reverse;
         justify-content: space-between;
+        width: 90%;
     }
 
     @media (min-width: 1024px) {
         flex-direction: column-reverse;
         align-items: flex-start;
         justify-content: flex-start;
-        flex: 100%;
-        margin: 0 1.5rem;
+    }
+
+    @media (min-width: 1330px) {
+        margin: 0 2.5rem;
     }
 `;
 
@@ -135,7 +142,7 @@ const Heading = styled.div`
     @media (min-width: 768px) {
         align-items: flex-start;
         flex: 100%;
-        margin-right: 4.31rem;
+        margin-right: 4rem;
     }
 
     @media (min-width: 1024px) {
@@ -147,16 +154,16 @@ const Title = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
     font-family: Antonio;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 
     @media (min-width: 768px) {
         text-align: left;
-        font-size: 43px;
+        font-size: 3rem;
     }
 `;
 
@@ -164,17 +171,21 @@ const Description = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
     font-family: Spartan;
-    font-size: 13px;
+    font-size: .8rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px; /* 200% */
-    max-width: 20.4375rem;
+    line-height: 22px;
     opacity: .9;
+    max-width: 85%;
+
+    @media (min-width: 550px) {
+        max-width: 70%;
+    }
 
     @media (min-width: 768px) {
         text-align: left;
-        font-size: 14px;
-        max-width: 32rem;
+        font-size: .9rem;
+        max-width: 100%;
     }
 `;
 

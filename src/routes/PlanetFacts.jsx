@@ -29,28 +29,31 @@ const PlanetFacts = ({
 
     return (
         <Container>
-            <Nav
-                selectedPlanet={selectedPlanet}
-                setSelectedPlanet={setSelectedPlanet}
-            />
-
             <PageContent>
-                <PlanetInfo
-                    filter={filter}
-                    setFilter={setFilter}
-                    name={name}
-                    image={image}
-                    description={description}
-                    wikipedia={wikipedia}
+                <Nav
                     selectedPlanet={selectedPlanet}
+                    setSelectedPlanet={setSelectedPlanet}
                 />
+                <Wrapper>
+                    <PlanetInfo
+                        filter={filter}
+                        setFilter={setFilter}
+                        name={name}
+                        image={image}
+                        description={description}
+                        wikipedia={wikipedia}
+                        selectedPlanet={selectedPlanet}
+                    />
+                </Wrapper>
+            </PageContent>
+            <Wrapper>
                 <PlanetStats
                     rotation={rotation}
                     revolution={revolution}
                     temp={temp}
                     radius={radius}
                 />
-            </PageContent>
+            </Wrapper>
         </Container>
     );
 }
@@ -58,13 +61,14 @@ const PlanetFacts = ({
 export default PlanetFacts;
 
 const Container = styled.div`
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
     overflow-x: hidden;
     background-color: ${props => props.theme.background};
+    padding-bottom: 1.2rem;
 `;
 
 const PageContent = styled.div`
@@ -75,4 +79,11 @@ const PageContent = styled.div`
         align-items: flex-start;
         justify-content: space-between;
     }
+`;
+
+const Wrapper = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;

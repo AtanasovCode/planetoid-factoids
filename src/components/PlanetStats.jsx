@@ -39,7 +39,6 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 1.75rem;
-    margin-bottom: 60px;
 
     @media (min-width: 768px) {
         width: 100vw;
