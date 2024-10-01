@@ -100,39 +100,26 @@ const Tab = styled.div`
     justify-content: center;
     color: ${props => props.theme.color};
     text-align: center;
-    font-family: League Spartan;
+    font-family: "Nunito Sans", sans-serif;
     font-size: .6rem;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.929px;
     text-transform: uppercase;
     cursor: pointer;
     padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
-    transition: all .4s ease;
+    transition: background .3s ease;
     position: relative;
+    border-radius: 12px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        width: 50%;
-        height: 0.25rem;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: transparent;
-        transition: all .4s ease;
-
-        ${props => props.active && `
-            background-color: #2D68F0;
-        `}
-    };
+    ${props => props.active && `
+        background-color: ${props.color};
+        border: none;
+    `};
 
     @media (min-width: 768px) {
+        border: 1px solid rgba(255, 255, 255, .4);
         width: 100%;
         text-align: left;
-        border: 1px solid rgba(255, 255, 255, .4);
         font-size: .7rem;
         line-height: 25px;
         display: flex;
@@ -140,17 +127,12 @@ const Tab = styled.div`
         justify-content: flex-start;
         padding: .5rem 2rem;
         margin-bottom: 1rem;
-        
-        ${props => props.active && `
-            background-color: ${props.color};
-        `};
-        
+    }
+
+    @media (min-width: 1024px) {
         &:hover {
-            background-color: ${(props) => `${props.color}43`};
+            background-color: ${props => props.active ? props.color : "rgba(75, 78, 78, 0.4)"};
+            border: none;
         }
-        
-        &::before {
-            display: none;
-        };
     }
 `;
