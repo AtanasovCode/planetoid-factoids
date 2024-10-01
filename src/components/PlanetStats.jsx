@@ -34,35 +34,44 @@ const PlanetStats = ({
 export default PlanetStats;
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
+    grid-gap: 1rem;
     margin-top: 1.75rem;
 
     @media (min-width: 768px) {
-        width: 100vw;
-        flex-direction: row;
-        justify-content: space-evenly;
-    } 
+        width: 95%;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 0;
+        grid-gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    @media (min-width: 1330px) {
+        width: 75%;
+    }
 `;
 
 const StatContainer = styled.div`
-    width: 80vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, .2);
+    border: 1px solid rgba(255, 255, 255, .4);
     padding: 1rem 1.5rem;
-    margin-bottom: .5rem;
+    border-radius: 10px;
 
     @media (min-width: 768px) {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        padding: 1rem;
-        margin-bottom: 0;
-        width: auto;
+        padding: 1.2rem;
     }
 `;
 
