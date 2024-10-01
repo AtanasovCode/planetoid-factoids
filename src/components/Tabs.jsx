@@ -101,7 +101,7 @@ const Tab = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
     font-family: League Spartan;
-    font-size: 11px;
+    font-size: .6rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -133,7 +133,7 @@ const Tab = styled.div`
         width: 100%;
         text-align: left;
         border: 1px solid rgba(255, 255, 255, .2);
-        font-size: 9px;
+        font-size: .7rem;
         line-height: 25px;
         display: flex;
         align-items: center;

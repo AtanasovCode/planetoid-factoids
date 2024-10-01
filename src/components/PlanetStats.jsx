@@ -79,7 +79,7 @@ const Name = styled.div`
     color: ${props => props.theme.color};
     font-family: League Spartan;
     opacity: .8;
-    font-size: 12px;
+    font-size: .6rem;
     font-style: normal;
     font-weight: 700;
     line-height: 16px; /* 200% */
@@ -87,12 +87,12 @@ const Name = styled.div`
     text-transform: uppercase;
 
     @media (min-width: 768px) {
-        font-size: 12px;
+        font-size: .7rem;
         opacity: .7;
     }
 
     @media (min-width: 1024px) {
-        font-size: 12px;
+        font-size: .7rem;
     }
 `;
 
@@ -100,20 +100,15 @@ const Stat = styled.div`
     color: ${props => props.theme.color};
     text-align: right;
     font-family: Antonio;
-    font-size: 20px;
+    font-size: 1.4rem;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.75px;
     text-transform: uppercase;
 
     @media (min-width: 768px) {
-        font-size: 24px;
-        letter-spacing: -0.9px;
+        font-size: 1.6rem;
     }
 
     @media (min-width: 1024px) {
-        font-size: 26px;
-        letter-spacing: -1.5px;
+        font-size: 1.6rem;
     }
 `;

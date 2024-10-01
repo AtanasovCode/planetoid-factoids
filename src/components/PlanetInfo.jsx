@@ -163,14 +163,14 @@ const Title = styled.div`
 
     @media (min-width: 768px) {
         text-align: left;
-        font-size: 3rem;
+        font-size: 4rem;
     }
 `;
 
 const Description = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
-    font-family: Spartan;
+    font-family: "Nunito Sans", sans-serif;
     font-size: .8rem;
     font-style: normal;
     font-weight: 400;
@@ -180,12 +180,19 @@ const Description = styled.div`
 
     @media (min-width: 550px) {
         max-width: 70%;
+        font-size: .9rem;
     }
 
     @media (min-width: 768px) {
         text-align: left;
-        font-size: .9rem;
+        font-size: 1rem;
         max-width: 100%;
+        line-height: 1.4rem;
+    }
+
+    @media (min-width: 1330px) {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
     }
 `;
 
@@ -193,24 +200,22 @@ const Source = styled.a`
     text-decoration: none;
     color: ${props => props.theme.color};
     font-family: League Spartan;
-    font-size: 12px;
+    font-size: .7rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5625rem; /* 208.333% */
-    opacity: .5;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.7;
 
     @media (min-width: 768px) {
-        font-size: 14px;
-        line-height: 25px; /* 208.333% */
+        font-size: .8rem;
     }
 
     @media (min-width: 1024px) {
+        font-size: .9rem;
         margin: 1rem 0;
     }
 `;
@@ -229,7 +234,7 @@ const Icon = styled.img`
     height: 0.75rem;
 
     @media (min-width: 768px) {
-        width: 0.85rem;
-        height: 0.85rem;
+        width: 0.9rem;
+        height: 0.9rem;
     }
 `;

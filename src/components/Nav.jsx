@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
 
+import logo from '../assets/logo.svg';
 import menu from "../assets/navigation/menu.svg";
 import arrow from "../assets/navigation/arrow.svg";
 import close from "../assets/navigation/close.svg";
@@ -12,7 +13,12 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
 
   return (
     <Navigation>
-      <Logo to="/">PlanetoidFactoids</Logo>
+      <Logo to="/">
+        <LogoIcon 
+          src={logo}
+          alt="planetoidfactoids logo"
+        />
+      </Logo>
 
       <Menu src={menu} onClick={() => setShowNav(!showNav)} />
 
@@ -182,27 +188,22 @@ const Menu = styled.img`
 `;
 
 const Logo = styled(Link)`
-  text-decoration: none;
   cursor: pointer;
-  color: #fff;
-  font-family: Antonio;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -1.05px;
-  text-transform: uppercase;
-  cursor: pointer;
+  width: 175px;
 
   @media (min-width: 768px) {
     margin-bottom: 2.44rem;
-    font-size: 28px;
-    letter-spacing: -1.05px;
+    width: 250px;
   }
 
   @media (min-width: 1024px) {
     margin-bottom: 0;
+    width: 225px;
   }
+`;
+
+const LogoIcon = styled.img`
+  width: 100%;
 `;
 
 const NavLogo = styled(Logo)`
