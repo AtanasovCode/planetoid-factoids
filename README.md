@@ -1,4 +1,4 @@
-![](./src/assets/screenshots/header.png)
+![](./src/assets/screenshots/header-readme.png)
 ![](./src/assets/screenshots/planets-gif.gif)
 
 ## Learn about our planets
