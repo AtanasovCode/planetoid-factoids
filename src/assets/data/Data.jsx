@@ -1,12 +1,13 @@
 //importing planet images
-import p1 from '../planets/1.svg';
-import p2 from '../planets/2.svg';
-import p3 from '../planets/3.svg';
-import p4 from '../planets/4.svg';
-import p5 from '../planets/5.svg';
-import p6 from '../planets/6.svg';
-import p7 from '../planets/7.svg';
-import p8 from '../planets/8.svg';
+import p1 from '../planets/mercury.svg';
+import p2 from '../planets/venus.svg';
+import p3 from '../planets/earth.svg';
+import p4 from '../planets/mars.svg';
+import p5 from '../planets/jupiter.svg';
+import p6 from '../planets/saturn.svg';
+import p7 from '../planets/uranus.svg';
+import p8 from '../planets/neptune.svg';
+
 
 //importing planet internal images
 import i1 from '../planets/internal/p1.svg';

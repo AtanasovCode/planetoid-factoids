@@ -2,14 +2,15 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import planet1 from '../assets/planets/1.svg';
-import planet2 from '../assets/planets/2.svg';
-import planet3 from '../assets/planets/3.svg';
-import planet4 from '../assets/planets/4.svg';
-import planet5 from '../assets/planets/5.svg';
-import planet6 from '../assets/planets/6.svg';
-import planet7 from '../assets/planets/7.svg';
-import planet8 from '../assets/planets/8.svg';
+import planet1 from '../assets/planets/mercury.svg';
+import planet2 from '../assets/planets/venus.svg';
+import planet3 from '../assets/planets/earth.svg';
+import planet4 from '../assets/planets/mars.svg';
+import planet5 from '../assets/planets/jupiter.svg';
+import planet6 from '../assets/planets/saturn.svg';
+import planet7 from '../assets/planets/uranus.svg';
+import planet8 from '../assets/planets/neptune.svg';
+
 
 import starryBG from '../assets/starry-background.svg';
 
