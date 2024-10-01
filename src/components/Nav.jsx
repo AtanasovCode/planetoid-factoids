@@ -163,8 +163,7 @@ const Navigation = styled.nav`
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 17px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.1rem 1.4rem;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -174,6 +173,7 @@ const Navigation = styled.nav`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 1.4rem 1.8rem;
   }
 `;
 

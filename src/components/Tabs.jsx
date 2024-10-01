@@ -132,7 +132,7 @@ const Tab = styled.div`
     @media (min-width: 768px) {
         width: 100%;
         text-align: left;
-        border: 1px solid rgba(255, 255, 255, .2);
+        border: 1px solid rgba(255, 255, 255, .4);
         font-size: .7rem;
         line-height: 25px;
         display: flex;

@@ -46,6 +46,8 @@ const Router = () => {
         temp
     } = planet;
 
+    const planetImage = planet.overview.image;
+
     const router = createBrowserRouter([
         {
             path: "/",
@@ -62,6 +64,7 @@ const Router = () => {
                 filter={filter}
                 setFilter={setFilter}
                 name={name}
+                planetImage={planetImage}
                 wikipedia={wikipedia}
                 rotation={rotation}
                 revolution={revolution}

@@ -24,7 +24,7 @@ const PlanetFacts = ({
     temp,
     image,
     description,
-
+    planetImage,
 }) => {
 
     return (
@@ -40,6 +40,7 @@ const PlanetFacts = ({
                         setFilter={setFilter}
                         name={name}
                         image={image}
+                        planetImage={planetImage}
                         description={description}
                         wikipedia={wikipedia}
                         selectedPlanet={selectedPlanet}

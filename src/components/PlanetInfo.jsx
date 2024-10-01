@@ -15,6 +15,7 @@ const PlanetInfo = ({
     wikipedia,
     image,
     description,
+    planetImage,
 }) => {
     return (
         <Container>
@@ -22,11 +23,22 @@ const PlanetInfo = ({
             <Tabs mobileView={true} filter={filter} setFilter={setFilter} name={name} />
 
             <PlanetContainer>
-                <Planet
-                    name={selectedPlanet}
-                    src={image}
-                    alt={`A picture pf the planet ${selectedPlanet}`}
-                />
+                <PlanetWrapper>
+                    <Planet
+                        name={selectedPlanet}
+                        src={filter === "surface" ? planetImage : image}
+                        alt={`A picture pf the planet ${selectedPlanet}`}
+                    />
+                    {
+                        filter === "surface" &&
+                        <SurfaceContainer>
+                            <SurfaceImage
+                                src={image}
+                                alt={`surface image of the planet ${name}`}
+                            />
+                        </SurfaceContainer>
+                    }
+                </PlanetWrapper>
             </PlanetContainer>
 
             <Info>
@@ -40,7 +52,7 @@ const PlanetInfo = ({
                     </Description>
 
                     <Source href={wikipedia} target="_blank">
-                        Source :
+                        Source:
                         <Wikipedia>Wikipedia</Wikipedia>
                         <Icon src={sourceIcon} alt="source icon" />
                     </Source>
@@ -88,7 +100,7 @@ const PlanetContainer = styled.div`
     }
 `;
 
-const Planet = styled.img`
+const PlanetWrapper = styled.div`
     width: 80%;
     position: relative;
 
@@ -97,7 +109,7 @@ const Planet = styled.img`
     }
     
     @media (min-width: 768px) {
-        width: 60%;
+        width: 45%;
     }
 
     @media (min-width: 1024px) {
@@ -107,6 +119,24 @@ const Planet = styled.img`
     @media (min-width: 1330px) {
         width: 70%;
     }
+`;
+
+const Planet = styled.img`
+    width: 100%;
+`;
+
+const SurfaceContainer = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const SurfaceImage = styled.img`
+    width: 90%;
 `;
 
 const Info = styled.div`
@@ -163,14 +193,14 @@ const Title = styled.div`
 
     @media (min-width: 768px) {
         text-align: left;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 `;
 
 const Description = styled.div`
     color: ${props => props.theme.color};
     text-align: center;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Nunito Sans", sans-serif;;
     font-size: .8rem;
     font-style: normal;
     font-weight: 400;
@@ -208,7 +238,7 @@ const Source = styled.a`
     justify-content: center;
     margin-top: 2rem;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.;
 
     @media (min-width: 768px) {
         font-size: .8rem;
@@ -222,10 +252,10 @@ const Source = styled.a`
 
 const Wikipedia = styled.div`
     text-decoration-line: underline;
-    margin: 0 0.25rem;
+    margin: 0 .25rem;
 
     @media (min-widht: 768px) {
-        margin: .5rem;
+        margin: 0 .5rem;
     }
 `;
 
