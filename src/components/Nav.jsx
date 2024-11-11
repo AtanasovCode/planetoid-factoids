@@ -32,7 +32,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
           />
           <MobileLogoIcon
             src={logo}
-            alt="logo icon"
+            alt="PlanetoidFactoids mobile navigation logo"
           />
         </NavLogo>
         <PlanetLinksWrapper>
@@ -207,8 +207,8 @@ const LogoIcon = styled.img`
   width: 100%;
 `;
 
-const MobileLogoIcon = styled.div`
-  width: 55%;
+const MobileLogoIcon = styled.img`
+  width: 50%;
 
   @media (min-width: 550px) {
     width: 35%;
