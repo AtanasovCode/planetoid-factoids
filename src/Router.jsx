@@ -54,6 +54,7 @@ const Router = () => {
             element: <Homepage
                 selectedPlanet={selectedPlanet}
                 setSelectedPlanet={setSelectedPlanet}
+                setFilter={setFilter}
             />
         },
         {

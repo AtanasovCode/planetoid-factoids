@@ -20,6 +20,7 @@ import Nav from "../components/Nav";
 const Homepage = ({
     selectedPlanet,
     setSelectedPlanet,
+    setFilter,
 }) => {
 
     //values used to represent X, Y coordinates for falling star
@@ -36,6 +37,7 @@ const Homepage = ({
             <Nav
                 selectedPlanet={selectedPlanet}
                 setSelectedPlanet={setSelectedPlanet}
+                setFilter={setFilter}
             />
 
             <PageContent>

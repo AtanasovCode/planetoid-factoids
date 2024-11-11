@@ -8,7 +8,7 @@ import arrow from "../assets/navigation/arrow.svg";
 import close from "../assets/navigation/close.svg";
 import starryBackground from "../assets/navigation/starry-background.svg";
 
-const Nav = ({ selectedPlanet, setSelectedPlanet, setFilter }) => {
+const Nav = ({ setSelectedPlanet, setFilter }) => {
   const [showNav, setShowNav] = useState(false);
 
   return (

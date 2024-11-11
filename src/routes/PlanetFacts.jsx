@@ -6,11 +6,6 @@ import Nav from "../components/Nav";
 import PlanetStats from "../components/PlanetStats";
 import PlanetInfo from "../components/PlanetInfo";
 
-//importing data
-import { planets } from "../assets/data/Data";
-
-import starryBG from '../assets/starry-background.svg';
-
 const PlanetFacts = ({
     selectedPlanet,
     setSelectedPlanet,
