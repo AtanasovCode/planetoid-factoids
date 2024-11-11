@@ -43,7 +43,7 @@ const Tabs = ({
             color: "#2D68F0"
         }
     ])
-    
+
 
     const colorObject = colors.find((item) => item.name === name);
     const color = colorObject.color;
@@ -105,16 +105,10 @@ const Tab = styled.div`
     font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
-    cursor: pointer;
     padding: 1.25rem 0;
     transition: background .3s ease;
     position: relative;
-    border-radius: 12px;
-
-    ${props => props.active && `
-        background-color: ${props.color};
-        border: none;
-    `};
+    border-radius: 16px;
 
     @media (min-width: 768px) {
         border: 1px solid rgba(255, 255, 255, .4);
@@ -127,12 +121,20 @@ const Tab = styled.div`
         justify-content: flex-start;
         padding: .5rem 2rem;
         margin-bottom: 1rem;
-    }
 
-    @media (min-width: 1024px) {
         &:hover {
-            background-color: ${props => props.active ? props.color : "rgba(75, 78, 78, 0.4)"};
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2); // Lighter hover effect for all tabs
             border: none;
         }
+
+        ${props => props.active && `
+            background-color: ${props.color};
+            border: none;
+
+            &:hover {
+                background-color: ${props => props.color};
+            }
+        `};
     }
 `;
