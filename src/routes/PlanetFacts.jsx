@@ -74,7 +74,7 @@ const FullPageWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: 1800px;
+    max-width: 2000px;
 `;
 
 const PageContent = styled.div`

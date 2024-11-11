@@ -169,14 +169,9 @@ const Navigation = styled.nav`
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 1.1rem 1.4rem;
-
-  @media (min-width: 768px) {
-    align-items: stretch;
-    flex-direction: column;
-    border-bottom: 2px solid rgba(255, 255, 255, .3);
-
-  }
+  padding: 1.1rem 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, .3);
+  margin-bottom: .5rem;
 
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -187,27 +182,34 @@ const Navigation = styled.nav`
 `;
 
 const Menu = styled.img`
-  width: 24px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 
   @media (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
 
 const Logo = styled(Link)`
   cursor: pointer;
-  width: 175px;
+  width: 45%;
+
+  @media (min-width: 550px) {
+    width: 33%;
+  }
 
   @media (min-width: 768px) {
-    margin-bottom: 2.44rem;
-    width: 250px;
+    width: 25%;
   }
 
   @media (min-width: 1024px) {
-    margin-bottom: 0;
-    width: 225px;
+    width: 15%;
   }
 `;
 
@@ -231,19 +233,19 @@ const NavLogo = styled.div`
     margin-bottom: 3.5rem;
     position: relative;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         display: none;
     }
 `
 
 const Close = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   position: absolute;
   left: 4%;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
@@ -265,6 +267,15 @@ const Links = styled.div`
   transition: all 0.4s ease;
   padding: 1.5rem 0;
 
+  @media (min-width: 550px) {
+    border-left: 2px solid rgba(255, 255, 255, .4);
+    width: 70%;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
   ${(props) =>
     props.active &&
     `
@@ -275,10 +286,10 @@ const Links = styled.div`
         opacity: 1;
     `}
 
-  @media (min-width: 768px) {
-    top: 0;
-    left: 0;
-    right: 0;
+  @media (min-width: 1024px) {
+    top: auto;
+    left: auto;
+    right: auto;
     z-index: 1;
     opacity: 1;
     padding: 0;
@@ -286,7 +297,7 @@ const Links = styled.div`
     background-color: transparent;
     transition: none;
     height: 100%;
-    width: 300%;
+    width: 100%;
   }
 
   @media (min-width: 1024px) {
@@ -302,12 +313,12 @@ const PlanetLinksWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     flex: auto;
     height: 100%;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 `;
 
@@ -327,11 +338,12 @@ const PlanetLink = styled(NavLink)`
     border-bottom: 0;
   }
 
-  @media (min-width: 768px) {
-    height: 100%;
+  @media (min-width: 1024px) {
+    width: auto;
     justify-content: center;
     border-bottom: 0;
     padding: 0;
+    margin-right: 2rem;
 
     &.active {
       background-color: transparent;
@@ -347,10 +359,6 @@ const PlanetLink = styled(NavLink)`
       bottom: 0;
       left: 0;
     }
-  }
-
-  @media (min-width: 1024px) {
-    margin-right: 2rem;
   }
 `;
 
