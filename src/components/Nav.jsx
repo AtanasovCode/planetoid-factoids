@@ -8,7 +8,7 @@ import arrow from "../assets/navigation/arrow.svg";
 import close from "../assets/navigation/close.svg";
 import starryBackground from "../assets/navigation/starry-background.svg";
 
-const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
+const Nav = ({ selectedPlanet, setSelectedPlanet, setFilter }) => {
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -24,7 +24,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
 
       <Links active={showNav}>
 
-        <NavLogo to="/">
+        <NavLogo>
           <Close
             src={close}
             alt="close icon"
@@ -41,6 +41,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("mercury");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -55,6 +56,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("venus");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -69,6 +71,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("earth");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -83,6 +86,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("mars");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -97,6 +101,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("jupiter");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -111,6 +116,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("saturn");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -125,6 +131,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("uranus");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -139,6 +146,7 @@ const Nav = ({ selectedPlanet, setSelectedPlanet }) => {
             onClick={() => {
               setShowNav(!showNav);
               setSelectedPlanet("neptune");
+              setFilter("overview");
             }}
           >
             <Planet>
@@ -215,7 +223,7 @@ const MobileLogoIcon = styled.img`
   }
 `;
 
-const NavLogo = styled(Logo)`
+const NavLogo = styled.div`
     width: 100%;
     display: flex;
     align-items: center;

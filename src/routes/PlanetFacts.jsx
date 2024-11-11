@@ -34,6 +34,7 @@ const PlanetFacts = ({
                     <Nav
                         selectedPlanet={selectedPlanet}
                         setSelectedPlanet={setSelectedPlanet}
+                        setFilter={setFilter}
                     />
                     <Wrapper>
                         <PlanetInfo

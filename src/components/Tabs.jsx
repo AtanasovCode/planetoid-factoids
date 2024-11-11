@@ -51,9 +51,9 @@ const Tabs = ({
 
     return (
         <Container mobile={mobileView}>
-            <Tab color={color} active={filter === "overview" && true} onClick={() => setFilter("overview")}>Overview</Tab>
-            <Tab color={color} active={filter === "internal" && true} onClick={() => setFilter("internal")}>Structure</Tab>
-            <Tab color={color} active={filter === "surface" && true} onClick={() => setFilter("surface")}>Surface</Tab>
+            <Tab color={color} $active={filter === "overview" && true} onClick={() => setFilter("overview")}>Overview</Tab>
+            <Tab color={color} $active={filter === "internal" && true} onClick={() => setFilter("internal")}>Structure</Tab>
+            <Tab color={color} $active={filter === "surface" && true} onClick={() => setFilter("surface")}>Surface</Tab>
         </Container>
     );
 }
@@ -110,6 +110,10 @@ const Tab = styled.div`
     position: relative;
     border-radius: 16px;
 
+    ${props => props.$active && `
+        background-color: ${props.color};
+    `};
+
     @media (min-width: 768px) {
         border: 1px solid rgba(255, 255, 255, .4);
         width: 100%;
@@ -121,7 +125,10 @@ const Tab = styled.div`
         justify-content: flex-start;
         padding: .5rem 2rem;
         margin-bottom: 1rem;
+    }
 
+    @media (min-width: 1024px) {
+        cursor: pointer;
         &:hover {
             cursor: pointer;
             background-color: rgba(255, 255, 255, 0.2); // Lighter hover effect for all tabs
